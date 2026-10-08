@@ -2,7 +2,7 @@ export const siteInfo = {
   name: "Hammad Hussain",
   email: "hammad31012004@gmail.com",
   whatsapp: "https://wa.me/923462351008",
-  contactPath: "/contact",
+  contactPath: "/",
 };
 
 export const industries = [
