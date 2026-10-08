@@ -65,9 +65,9 @@ export default async function ServicePage({ params }) {
   const faqs = getFaqs(service);
 
   return (
-    <main className="bg-[#f5f5f1] text-[#111]">
+    <main className="bg-[#fafafa] text-[#111]">
 
-      <section className="border-b border-[#e3e3dd] bg-gradient-to-b from-white to-[#f5f5f1]">
+      <section className=" ">
         <div className={`${wrap} pb-16 pt-10 md:pb-24`}>
           <nav className="mb-8 flex items-center gap-2 text-[11px] text-[#777]">
             <Link href="/" className="hover:text-[#111]">Home</Link>
@@ -89,7 +89,7 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      <section className="border-b border-[#e3e3dd]">
+      <section className="bg-white">
         <div
           className={`${wrap} grid items-start gap-10 py-20 md:grid-cols-[minmax(0,330px)_1fr] md:gap-16 md:py-28`}
         >
@@ -122,44 +122,66 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      <section className="border-b border-[#e3e3dd]">
+      <section className="">
         <div className={`${wrap} py-20 md:py-28`}>
           <Eyebrow>What I offer</Eyebrow>
           <Heading className="mb-12 max-w-[560px]">{service.includedHeading}</Heading>
 
-          <div className="grid gap-px border border-[#dcdcd5] bg-[#dcdcd5] sm:grid-cols-2 lg:grid-cols-3">
-            {service.included.map((item) => (
-              <div key={item.title} className="bg-[#f5f5f1] p-6 md:p-7">
-                <h3 className="text-[13px] font-medium text-[#111]">{item.title}</h3>
-                <p className="mt-3 text-[12px] leading-[1.7] text-[#777]">{item.text}</p>
-              </div>
-            ))}
-            <div className="hidden bg-[#e8e9e2] sm:block" />
-          </div>
+          <div className="grid border border-[#dcdcd5] rounded-lg overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
+  {service.included.map((item, i) => (
+    <div
+      key={item.title}
+      className={`
+        bg-[#f5f5f1] p-6 md:p-7
+        border border-[#dcdcd5] 
+      `}
+    >
+      <h3 className="text-[13px] font-medium text-[#111]">
+        {item.title}
+      </h3>
+
+      <p className="mt-3 text-[12px] leading-[1.7] text-[#777]">
+        {item.text}
+      </p>
+    </div>
+  ))}
+
+  <div className="hidden bg-[#e8e9e2] sm:block" />
+</div>
         </div>
       </section>
 
-      <section className="border-b border-[#e3e3dd]">
+      <section className="bg-white">
         <div className={`${wrap} py-20 md:py-28`}>
           <Eyebrow>My process</Eyebrow>
           <Heading className="mb-12 max-w-[560px]">{service.processHeading}</Heading>
 
-          <div className="grid gap-px border border-[#dcdcd5] bg-[#dcdcd5] sm:grid-cols-2 lg:grid-cols-4">
-            {service.process.map((step, i) => (
-              <div key={step.title} className="bg-[#f5f5f1] p-6 md:p-7">
-                <span className="text-[10px] text-[#008c6a]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-4 text-[13px] font-medium text-[#111]">{step.title}</h3>
-                <p className="mt-3 text-[12px] leading-[1.7] text-[#777]">{step.text}</p>
-              </div>
-            ))}
-            <div className="hidden bg-[#e8e9e2] sm:block lg:col-span-3" />
-          </div>
+          <div className="grid border border-[#dcdcd5] rounded-lg sm:grid-cols-2 lg:grid-cols-4">
+  {service.process.map((step, i) => (
+    <div
+      key={step.title}
+      className=" p-6 md:p-7 border-b border-[#dcdcd5] sm:border-r last:border-r-0"
+    >
+      <span className="text-[10px] text-[#008c6a]">
+        {String(i + 1).padStart(2, "0")}
+      </span>
+
+      <h3 className="mt-4 text-[13px] font-medium text-[#111]">
+        {step.title}
+      </h3>
+
+      <p className="mt-3 text-[12px] leading-[1.7] text-[#777]">
+        {step.text}
+      </p>
+    </div>
+  ))}
+
+  <div className="hidden bg-[#e8e9e2] sm:block lg:col-span-3" />
+</div>
         </div>
       </section>
 
-      <section className="border-b border-[#e3e3dd]">
+      <section className="">
         <div className={`${wrap} grid gap-14 py-20 md:grid-cols-2 md:py-28`}>
           <div>
             <Eyebrow>Why it works</Eyebrow>
@@ -199,7 +221,7 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      <section className="border-b border-[#e3e3dd]">
+      <section className="bg-white">
         <div className={`${wrap} py-20 md:py-28`}>
           <Eyebrow>Where I work</Eyebrow>
           <Heading className="mb-14 max-w-[520px]">
@@ -219,7 +241,7 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      <section className="border-b border-[#e3e3dd]">
+      <section className="">
         <div className={`${wrap} py-20 md:py-28`}>
           <Eyebrow>Common questions</Eyebrow>
           <Heading className="mb-12 max-w-[560px]">
@@ -244,7 +266,7 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      <section className="border-b border-[#e3e3dd]">
+      <section className="bg-white">
         <div className={`${wrap} py-20 md:py-28`}>
           <Eyebrow>Get started</Eyebrow>
           <h2 className="max-w-[640px] text-[clamp(36px,5vw,62px)] font-medium leading-[1] tracking-[-0.045em]">
@@ -276,31 +298,34 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      <section>
+      <section className="">
         <div className={`${wrap} py-20 md:py-28`}>
           <Heading className="mb-12 max-w-[420px]">
             Other ways I can help your business grow
           </Heading>
 
-          <div className="grid gap-px border border-[#dcdcd5] bg-[#dcdcd5] md:grid-cols-3">
-            {others.map((item) => (
-              <Link
-                key={item.slug}
-                href={`/services/${item.slug}`}
-                className="group bg-[#f5f5f1] p-7 transition hover:bg-white"
-              >
-                <h3 className="flex items-center justify-between text-[14px] font-medium text-[#111]">
-                  {item.title}
-                  <span className="text-[#008c6a] transition group-hover:translate-x-1">
-                    →
-                  </span>
-                </h3>
-                <p className="mt-3 text-[12px] leading-[1.7] text-[#777]">
-                  {item.shortDescription}
-                </p>
-              </Link>
-            ))}
-          </div>
+<div className="grid border border-[#dcdcd5] rounded-lg md:grid-cols-3">
+  {others.map((item, index) => (
+    <Link
+      key={item.slug}
+      href={`/services/${item.slug}`}
+      className={`group p-7 transition hover:bg-white ${
+        index === 1 ? "border-x border-[#dcdcd5]" : ""
+      }`}
+    >
+      <h3 className="flex items-center justify-between text-[14px] font-medium text-[#111]">
+        {item.title}
+        <span className="text-[#008c6a] transition group-hover:translate-x-1">
+          →
+        </span>
+      </h3>
+
+      <p className="mt-3 text-[12px] leading-[1.7] text-[#777]">
+        {item.shortDescription}
+      </p>
+    </Link>
+  ))}
+</div>
         </div>
       </section>
     </main>
