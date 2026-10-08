@@ -655,7 +655,8 @@ button {
 ========================= */
 
 .footer {
-  background: #111;
+  /* background: #111; */
+  background: #fafafa;
 
   color: white;
 

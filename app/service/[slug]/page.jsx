@@ -14,8 +14,8 @@ const wrap = "mx-auto w-[min(1200px,calc(100%-40px))]";
 
 function Eyebrow({ children }) {
   return (
-    <span className="mb-4 flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-[#777]">
-      <span className="h-px w-8 bg-[#008c6a]" />
+    <span className="mb-5 flex items-center gap-3 text-[12px] uppercase tracking-[0.2em] text-[#777]">
+      <span className="h-px w-10 bg-[#008c6a]" />
       {children}
     </span>
   );
@@ -24,7 +24,7 @@ function Eyebrow({ children }) {
 function Heading({ children, className = "" }) {
   return (
     <h2
-      className={`text-[clamp(32px,4vw,52px)] font-medium leading-[1.02] tracking-[-0.04em] text-[#111] ${className}`}
+      className={`text-[clamp(36px,4.6vw,60px)] font-medium leading-[1.02] tracking-[-0.04em] text-[#111] ${className}`}
     >
       {children}
     </h2>
@@ -65,272 +65,665 @@ export default async function ServicePage({ params }) {
   const faqs = getFaqs(service);
 
   return (
-    <main className="bg-[#fafafa] text-[#111]">
+    <>
+      <main className="bg-[#fafafa] text-[#111]">
 
-      <section className=" ">
-        <div className={`${wrap} pb-16 pt-10 md:pb-24`}>
-          <nav className="mb-8 flex items-center gap-2 text-[11px] text-[#777]">
-            <Link href="/" className="hover:text-[#111]">Home</Link>
-            <span>/</span>
-            <Link href="/#services" className="hover:text-[#111]">Services</Link>
-            <span>/</span>
-            <span className="text-[#111]">{service.title}</span>
-          </nav>
+        <section className=" ">
+          <div className={`${wrap} pb-16 pt-10 md:pb-24`}>
+            <nav className="mb-8 flex items-center gap-2 text-[14px] text-[#777]">
+              <Link href="/" className="hover:text-[#111]">Home</Link>
+              <span>/</span>
+              <Link href="/#services" className="hover:text-[#111]">Services</Link>
+              <span>/</span>
+              <span className="text-[#111]">{service.title}</span>
+            </nav>
 
-          <Eyebrow>{service.label}</Eyebrow>
+            <Eyebrow>{service.label}</Eyebrow>
 
-          <h1 className="max-w-[760px] text-[clamp(38px,5.5vw,68px)] font-medium leading-[1.02] tracking-[-0.045em]">
-            {service.heroTitle}
-          </h1>
+            <h1 className="max-w-[860px] text-[clamp(44px,6.2vw,80px)] font-medium leading-[1.02] tracking-[-0.045em]">
+              {service.heroTitle}
+            </h1>
 
-          <p className="mt-6 max-w-[520px] text-[15px] leading-[1.7] text-[#666]">
-            {service.heroText}
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div
-          className={`${wrap} grid items-start gap-10 py-20 md:grid-cols-[minmax(0,330px)_1fr] md:gap-16 md:py-28`}
-        >
-          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-[#111]">
-            <Image
-              src={service.image}
-              alt={service.title}
-              fill
-              sizes="(max-width: 768px) 100vw, 330px"
-              className="object-cover"
-              priority
-            />
+            <p className="mt-7 max-w-[620px] text-[18px] leading-[1.7] text-[#666]">
+              {service.heroText}
+            </p>
           </div>
+        </section>
 
-          <div className="max-w-[640px]">
-            <p className="text-[14px] leading-[1.75] text-[#444]">
-              {service.introLead}
+        <section className="bg-white">
+          <div
+            className={`${wrap} grid items-start gap-10 py-20 md:grid-cols-[minmax(0,360px)_1fr] md:gap-16 md:py-28`}
+          >
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-[#111]">
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 360px"
+                className="object-cover"
+                priority
+              />
+            </div>
+
+            <div className="max-w-[700px]">
+              <p className="text-[18px] leading-[1.75] text-[#444]">
+                {service.introLead}
+              </p>
+
+              <h2 className="mb-6 mt-9 text-[clamp(30px,3.4vw,44px)] font-medium leading-[1.1] tracking-[-0.035em]">
+                {service.introHeading}
+              </h2>
+
+              <div className="space-y-5 text-[16.5px] leading-[1.8] text-[#666]">
+                {service.introParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="">
+          <div className={`${wrap} py-20 md:py-28`}>
+            <Eyebrow>What I offer</Eyebrow>
+            <Heading className="mb-12 max-w-[680px]">{service.includedHeading}</Heading>
+
+            <div className="grid border border-[#dcdcd5] rounded-lg overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
+              {service.included.map((item, i) => (
+                <div
+                  key={item.title}
+                  className={`
+                    bg-[#f5f5f1] p-6 md:p-8
+                    border border-[#dcdcd5] 
+                  `}
+                >
+                  <h3 className="text-[18px] font-medium text-[#111]">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 text-[15.5px] leading-[1.7] text-[#777]">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+
+              <div className="hidden bg-[#e8e9e2] sm:block" />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white">
+          <div className={`${wrap} py-20 md:py-28`}>
+            <Eyebrow>My process</Eyebrow>
+            <Heading className="mb-12 max-w-[680px]">{service.processHeading}</Heading>
+
+            <div className="grid border border-[#dcdcd5] rounded-lg sm:grid-cols-2 lg:grid-cols-4">
+              {service.process.map((step, i) => (
+                <div
+                  key={step.title}
+                  className=" p-6 md:p-8 border-b border-[#dcdcd5] sm:border-r last:border-r-0"
+                >
+                  <span className="text-[13px] text-[#008c6a]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  <h3 className="mt-4 text-[18px] font-medium text-[#111]">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-3 text-[15.5px] leading-[1.7] text-[#777]">
+                    {step.text}
+                  </p>
+                </div>
+              ))}
+
+              <div className="hidden bg-[#e8e9e2] sm:block lg:col-span-3" />
+            </div>
+          </div>
+        </section>
+
+        <section className="">
+          <div className={`${wrap} grid gap-14 py-20 md:grid-cols-2 md:py-28`}>
+            <div>
+              <Eyebrow>Why it works</Eyebrow>
+              <h2 className="mb-8 max-w-[520px] text-[clamp(30px,3.4vw,42px)] font-medium leading-[1.1] tracking-[-0.035em]">
+                {service.benefitsHeading}
+              </h2>
+
+              <ul className="space-y-4">
+                {service.benefits.map((benefit) => (
+                  <li
+                    key={benefit}
+                    className="flex gap-3 text-[16.5px] leading-[1.6] text-[#555]"
+                  >
+                    <span className="mt-[10px] h-[6px] w-[6px] shrink-0 rounded-full bg-[#008c6a]" />
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="mb-8 mt-0 text-[clamp(26px,2.8vw,34px)] font-medium tracking-[-0.03em] md:mt-[38px]">
+                Industries I Work With
+              </h2>
+
+              <div className="flex flex-wrap gap-3">
+                {industries.map((industry) => (
+                  <span
+                    key={industry}
+                    className="border border-[#dcdcd5] bg-white/50 px-5 py-3 text-[14.5px] text-[#555]"
+                  >
+                    {industry}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white">
+          <div className={`${wrap} py-20 md:py-28`}>
+            <Eyebrow>Where I work</Eyebrow>
+            <Heading className="mb-14 max-w-[640px]">
+              {service.title} Services Across Multiple Regions
+            </Heading>
+
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+              {regions.map((region) => (
+                <div key={region.name}>
+                  <h3 className="mb-3 text-[18px] font-medium text-[#008c6a]">
+                    {region.name}
+                  </h3>
+                  <p className="text-[15.5px] leading-[1.75] text-[#666]">{region.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="">
+          <div className={`${wrap} py-20 md:py-28`}>
+            <Eyebrow>Common questions</Eyebrow>
+            <Heading className="mb-12 max-w-[680px]">
+              Frequently asked questions about {service.title}
+            </Heading>
+
+            <div className="max-w-[900px] divide-y divide-[#dcdcd5] border-y border-[#dcdcd5]">
+              {faqs.map((faq) => (
+                <details key={faq.question} className="group py-6">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-[18px] font-medium text-[#111]">
+                    {faq.question}
+                    <span className="text-[24px] text-[#008c6a] transition group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-4 max-w-[760px] text-[16px] leading-[1.75] text-[#666]">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white">
+          <div className={`${wrap} py-20 md:py-28`}>
+            <Eyebrow>Get started</Eyebrow>
+            <h2 className="max-w-[760px] text-[clamp(40px,5.6vw,72px)] font-medium leading-[1] tracking-[-0.045em]">
+              Ready For {service.title} That Actually Works For You?
+            </h2>
+
+            <p className="mt-6 max-w-[540px] text-[17px] leading-[1.7] text-[#666]">
+              Book a meeting and I will walk you through exactly what a working{" "}
+              {service.title.toLowerCase()} plan would look like for your business, with no
+              pressure and no generic pitch.
             </p>
 
-            <h2 className="mb-6 mt-8 text-[clamp(26px,3vw,36px)] font-medium leading-[1.1] tracking-[-0.035em]">
-              {service.introHeading}
-            </h2>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                href={siteInfo.contactPath}
+                className="bg-[#008c6a] rounded-lg px-7 py-4 text-[14.5px] text-white transition hover:bg-[#00a77e]"
+              >
+                Create a meeting →
+              </Link>
+              <a
+                href={siteInfo.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border rounded-lg border-[#dcdcd5] bg-white/60 px-7 py-4 text-[14.5px] text-[#333] transition hover:bg-white"
+              >
+                Message on WhatsApp →
+              </a>
+            </div>
+          </div>
+        </section>
 
-            <div className="space-y-5 text-[13.5px] leading-[1.8] text-[#666]">
-              {service.introParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+        <section className="">
+          <div className={`${wrap} py-20 md:py-28`}>
+            <Heading className="mb-12 max-w-[520px]">
+              Other ways I can help your business grow
+            </Heading>
+
+            <div className="grid border border-[#dcdcd5] rounded-lg md:grid-cols-3">
+              {others.map((item, index) => (
+                <Link
+                  key={item.slug}
+                  href={`/services/${item.slug}`}
+                  className={`group p-8 transition hover:bg-white ${
+                    index === 1 ? "border-x border-[#dcdcd5]" : ""
+                  }`}
+                >
+                  <h3 className="flex items-center justify-between text-[19px] font-medium text-[#111]">
+                    {item.title}
+                    <span className="text-[#008c6a] transition group-hover:translate-x-1">
+                      →
+                    </span>
+                  </h3>
+
+                  <p className="mt-3 text-[15.5px] leading-[1.7] text-[#777]">
+                    {item.shortDescription}
+                  </p>
+                </Link>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      <section className="">
-        <div className={`${wrap} py-20 md:py-28`}>
-          <Eyebrow>What I offer</Eyebrow>
-          <Heading className="mb-12 max-w-[560px]">{service.includedHeading}</Heading>
-
-          <div className="grid border border-[#dcdcd5] rounded-lg overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
-  {service.included.map((item, i) => (
-    <div
-      key={item.title}
-      className={`
-        bg-[#f5f5f1] p-6 md:p-7
-        border border-[#dcdcd5] 
-      `}
-    >
-      <h3 className="text-[13px] font-medium text-[#111]">
-        {item.title}
-      </h3>
-
-      <p className="mt-3 text-[12px] leading-[1.7] text-[#777]">
-        {item.text}
-      </p>
-    </div>
-  ))}
-
-  <div className="hidden bg-[#e8e9e2] sm:block" />
-</div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className={`${wrap} py-20 md:py-28`}>
-          <Eyebrow>My process</Eyebrow>
-          <Heading className="mb-12 max-w-[560px]">{service.processHeading}</Heading>
-
-          <div className="grid border border-[#dcdcd5] rounded-lg sm:grid-cols-2 lg:grid-cols-4">
-  {service.process.map((step, i) => (
-    <div
-      key={step.title}
-      className=" p-6 md:p-7 border-b border-[#dcdcd5] sm:border-r last:border-r-0"
-    >
-      <span className="text-[10px] text-[#008c6a]">
-        {String(i + 1).padStart(2, "0")}
-      </span>
-
-      <h3 className="mt-4 text-[13px] font-medium text-[#111]">
-        {step.title}
-      </h3>
-
-      <p className="mt-3 text-[12px] leading-[1.7] text-[#777]">
-        {step.text}
-      </p>
-    </div>
-  ))}
-
-  <div className="hidden bg-[#e8e9e2] sm:block lg:col-span-3" />
-</div>
-        </div>
-      </section>
-
-      <section className="">
-        <div className={`${wrap} grid gap-14 py-20 md:grid-cols-2 md:py-28`}>
-          <div>
-            <Eyebrow>Why it works</Eyebrow>
-            <h2 className="mb-8 max-w-[440px] text-[clamp(26px,3vw,34px)] font-medium leading-[1.1] tracking-[-0.035em]">
-              {service.benefitsHeading}
-            </h2>
-
-            <ul className="space-y-4">
-              {service.benefits.map((benefit) => (
-                <li
-                  key={benefit}
-                  className="flex gap-3 text-[13px] leading-[1.6] text-[#555]"
-                >
-                  <span className="mt-[7px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#008c6a]" />
-                  {benefit}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="mb-8 mt-0 text-[clamp(22px,2.4vw,28px)] font-medium tracking-[-0.03em] md:mt-[34px]">
-              Industries I Work With
-            </h2>
-
-            <div className="flex flex-wrap gap-3">
-              {industries.map((industry) => (
-                <span
-                  key={industry}
-                  className="border border-[#dcdcd5] bg-white/50 px-4 py-2.5 text-[11px] text-[#555]"
-                >
-                  {industry}
-                </span>
-              ))}
+      <footer className="footer bg-white">
+        <div className="footer-top">
+          <div className="footer-brand">
+            <div className="footer-logo">HH</div>
+            <div className="mt-5 max-w-[360px] text-[15px] leading-[1.7] text-[#777]">
+              I design and build the digital presence of ambitious businesses, all under one standard.
             </div>
           </div>
-        </div>
-      </section>
 
-      <section className="bg-white">
-        <div className={`${wrap} py-20 md:py-28`}>
-          <Eyebrow>Where I work</Eyebrow>
-          <Heading className="mb-14 max-w-[520px]">
-            {service.title} Services Across Multiple Regions
-          </Heading>
+          <div className="footer-column">
+            <span className="text-[12px]">Explore</span>
+            <Link href="/" className="text-[15px]">Home</Link>
+            <Link href="/#work" className="text-[15px]">Work</Link>
+            <Link href="/#services" className="text-[15px]">Services</Link>
+            <Link href={siteInfo.contactPath} className="text-[15px]">Contact</Link>
+          </div>
 
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {regions.map((region) => (
-              <div key={region.name}>
-                <h3 className="mb-3 text-[13px] font-medium text-[#008c6a]">
-                  {region.name}
-                </h3>
-                <p className="text-[12px] leading-[1.75] text-[#666]">{region.text}</p>
-              </div>
+          <div className="footer-column">
+            <span className="text-[12px]">Services</span>
+            {services.slice(0, 5).map((item) => (
+              <Link
+                key={item.slug}
+                href={`/services/${item.slug}`}
+                className="text-[15px]"
+              >
+                {item.title}
+              </Link>
             ))}
           </div>
-        </div>
-      </section>
 
-      <section className="">
-        <div className={`${wrap} py-20 md:py-28`}>
-          <Eyebrow>Common questions</Eyebrow>
-          <Heading className="mb-12 max-w-[560px]">
-            Frequently asked questions about {service.title}
-          </Heading>
-
-          <div className="max-w-[820px] divide-y divide-[#dcdcd5] border-y border-[#dcdcd5]">
-            {faqs.map((faq) => (
-              <details key={faq.question} className="group py-5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-[13px] font-medium text-[#111]">
-                  {faq.question}
-                  <span className="text-[18px] text-[#008c6a] transition group-open:rotate-45">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-3 max-w-[700px] text-[12.5px] leading-[1.75] text-[#666]">
-                  {faq.answer}
-                </p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className={`${wrap} py-20 md:py-28`}>
-          <Eyebrow>Get started</Eyebrow>
-          <h2 className="max-w-[640px] text-[clamp(36px,5vw,62px)] font-medium leading-[1] tracking-[-0.045em]">
-            Ready For {service.title} That Actually Works For You?
-          </h2>
-
-          <p className="mt-6 max-w-[460px] text-[14px] leading-[1.7] text-[#666]">
-            Book a meeting and I will walk you through exactly what a working{" "}
-            {service.title.toLowerCase()} plan would look like for your business, with no
-            pressure and no generic pitch.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link
-              href={siteInfo.contactPath}
-              className="bg-[#008c6a] rounded-lg px-6 py-3.5 text-[11px] text-white transition hover:bg-[#00a77e]"
-            >
-              Create a meeting →
-            </Link>
+          <div className="footer-column">
+            <span className="text-[12px]">Get in touch</span>
             <a
               href={siteInfo.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="border rounded-lg border-[#dcdcd5] bg-white/60 px-6 py-3.5 text-[11px] text-[#333] transition hover:bg-white"
+              className="text-[15px]"
             >
-              Message on WhatsApp →
+              Message on WhatsApp
+            </a>
+            <a href={`mailto:${siteInfo.email}`} className="text-[15px]">
+              {siteInfo.email}
             </a>
           </div>
         </div>
-      </section>
 
-      <section className="">
-        <div className={`${wrap} py-20 md:py-28`}>
-          <Heading className="mb-12 max-w-[420px]">
-            Other ways I can help your business grow
-          </Heading>
-
-<div className="grid border border-[#dcdcd5] rounded-lg md:grid-cols-3">
-  {others.map((item, index) => (
-    <Link
-      key={item.slug}
-      href={`/services/${item.slug}`}
-      className={`group p-7 transition hover:bg-white ${
-        index === 1 ? "border-x border-[#dcdcd5]" : ""
-      }`}
-    >
-      <h3 className="flex items-center justify-between text-[14px] font-medium text-[#111]">
-        {item.title}
-        <span className="text-[#008c6a] transition group-hover:translate-x-1">
-          →
-        </span>
-      </h3>
-
-      <p className="mt-3 text-[12px] leading-[1.7] text-[#777]">
-        {item.shortDescription}
-      </p>
-    </Link>
-  ))}
-</div>
+        <div className="footer-bottom">
+          <span className="text-[13px]">
+            © {new Date().getFullYear()} {siteInfo.name}. All rights reserved.
+          </span>
+          <span className="text-[13px]">
+            Working with businesses across Pakistan, UAE, UK, USA and Canada
+          </span>
         </div>
-      </section>
-    </main>
+      </footer>
+    </>
   );
 }
+
+
+// import Image from "next/image";
+// import Link from "next/link";
+// import { notFound } from "next/navigation";
+// import {
+//   services,
+//   siteInfo,
+//   industries,
+//   getRegions,
+//   getFaqs,
+//   getServiceBySlug,
+// } from "../../../utils/data/services";
+
+// const wrap = "mx-auto w-[min(1200px,calc(100%-40px))]";
+
+// function Eyebrow({ children }) {
+//   return (
+//     <span className="mb-4 flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-[#777]">
+//       <span className="h-px w-8 bg-[#008c6a]" />
+//       {children}
+//     </span>
+//   );
+// }
+
+// function Heading({ children, className = "" }) {
+//   return (
+//     <h2
+//       className={`text-[clamp(32px,4vw,52px)] font-medium leading-[1.02] tracking-[-0.04em] text-[#111] ${className}`}
+//     >
+//       {children}
+//     </h2>
+//   );
+// }
+
+// export function generateStaticParams() {
+//   return services.map((service) => ({ slug: service.slug }));
+// }
+
+// export async function generateMetadata({ params }) {
+//   const { slug } = await params;
+//   const service = getServiceBySlug(slug);
+
+//   if (!service) {
+//     return {};
+//   }
+
+//   return {
+//     title: `${service.title} Services | ${siteInfo.name}`,
+//     description: service.shortDescription,
+//   };
+// }
+
+// export default async function ServicePage({ params }) {
+//   const { slug } = await params;
+//   const service = getServiceBySlug(slug);
+
+//   if (!service) {
+//     notFound();
+//   }
+
+//   const index = services.findIndex((item) => item.slug === slug);
+//   const others = [1, 2, 3].map(
+//     (step) => services[(index + step) % services.length]
+//   );
+//   const regions = getRegions(service.title);
+//   const faqs = getFaqs(service);
+
+//   return (
+//     <main className="bg-[#fafafa] text-[#111]">
+
+//       <section className=" ">
+//         <div className={`${wrap} pb-16 pt-10 md:pb-24`}>
+//           <nav className="mb-8 flex items-center gap-2 text-[11px] text-[#777]">
+//             <Link href="/" className="hover:text-[#111]">Home</Link>
+//             <span>/</span>
+//             <Link href="/#services" className="hover:text-[#111]">Services</Link>
+//             <span>/</span>
+//             <span className="text-[#111]">{service.title}</span>
+//           </nav>
+
+//           <Eyebrow>{service.label}</Eyebrow>
+
+//           <h1 className="max-w-[760px] text-[clamp(38px,5.5vw,68px)] font-medium leading-[1.02] tracking-[-0.045em]">
+//             {service.heroTitle}
+//           </h1>
+
+//           <p className="mt-6 max-w-[520px] text-[15px] leading-[1.7] text-[#666]">
+//             {service.heroText}
+//           </p>
+//         </div>
+//       </section>
+
+//       <section className="bg-white">
+//         <div
+//           className={`${wrap} grid items-start gap-10 py-20 md:grid-cols-[minmax(0,330px)_1fr] md:gap-16 md:py-28`}
+//         >
+//           <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-[#111]">
+//             <Image
+//               src={service.image}
+//               alt={service.title}
+//               fill
+//               sizes="(max-width: 768px) 100vw, 330px"
+//               className="object-cover"
+//               priority
+//             />
+//           </div>
+
+//           <div className="max-w-[640px]">
+//             <p className="text-[14px] leading-[1.75] text-[#444]">
+//               {service.introLead}
+//             </p>
+
+//             <h2 className="mb-6 mt-8 text-[clamp(26px,3vw,36px)] font-medium leading-[1.1] tracking-[-0.035em]">
+//               {service.introHeading}
+//             </h2>
+
+//             <div className="space-y-5 text-[13.5px] leading-[1.8] text-[#666]">
+//               {service.introParagraphs.map((paragraph) => (
+//                 <p key={paragraph}>{paragraph}</p>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       <section className="">
+//         <div className={`${wrap} py-20 md:py-28`}>
+//           <Eyebrow>What I offer</Eyebrow>
+//           <Heading className="mb-12 max-w-[560px]">{service.includedHeading}</Heading>
+
+//           <div className="grid border border-[#dcdcd5] rounded-lg overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
+//   {service.included.map((item, i) => (
+//     <div
+//       key={item.title}
+//       className={`
+//         bg-[#f5f5f1] p-6 md:p-7
+//         border border-[#dcdcd5] 
+//       `}
+//     >
+//       <h3 className="text-[13px] font-medium text-[#111]">
+//         {item.title}
+//       </h3>
+
+//       <p className="mt-3 text-[12px] leading-[1.7] text-[#777]">
+//         {item.text}
+//       </p>
+//     </div>
+//   ))}
+
+//   <div className="hidden bg-[#e8e9e2] sm:block" />
+// </div>
+//         </div>
+//       </section>
+
+//       <section className="bg-white">
+//         <div className={`${wrap} py-20 md:py-28`}>
+//           <Eyebrow>My process</Eyebrow>
+//           <Heading className="mb-12 max-w-[560px]">{service.processHeading}</Heading>
+
+//           <div className="grid border border-[#dcdcd5] rounded-lg sm:grid-cols-2 lg:grid-cols-4">
+//   {service.process.map((step, i) => (
+//     <div
+//       key={step.title}
+//       className=" p-6 md:p-7 border-b border-[#dcdcd5] sm:border-r last:border-r-0"
+//     >
+//       <span className="text-[10px] text-[#008c6a]">
+//         {String(i + 1).padStart(2, "0")}
+//       </span>
+
+//       <h3 className="mt-4 text-[13px] font-medium text-[#111]">
+//         {step.title}
+//       </h3>
+
+//       <p className="mt-3 text-[12px] leading-[1.7] text-[#777]">
+//         {step.text}
+//       </p>
+//     </div>
+//   ))}
+
+//   <div className="hidden bg-[#e8e9e2] sm:block lg:col-span-3" />
+// </div>
+//         </div>
+//       </section>
+
+//       <section className="">
+//         <div className={`${wrap} grid gap-14 py-20 md:grid-cols-2 md:py-28`}>
+//           <div>
+//             <Eyebrow>Why it works</Eyebrow>
+//             <h2 className="mb-8 max-w-[440px] text-[clamp(26px,3vw,34px)] font-medium leading-[1.1] tracking-[-0.035em]">
+//               {service.benefitsHeading}
+//             </h2>
+
+//             <ul className="space-y-4">
+//               {service.benefits.map((benefit) => (
+//                 <li
+//                   key={benefit}
+//                   className="flex gap-3 text-[13px] leading-[1.6] text-[#555]"
+//                 >
+//                   <span className="mt-[7px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#008c6a]" />
+//                   {benefit}
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           <div>
+//             <h2 className="mb-8 mt-0 text-[clamp(22px,2.4vw,28px)] font-medium tracking-[-0.03em] md:mt-[34px]">
+//               Industries I Work With
+//             </h2>
+
+//             <div className="flex flex-wrap gap-3">
+//               {industries.map((industry) => (
+//                 <span
+//                   key={industry}
+//                   className="border border-[#dcdcd5] bg-white/50 px-4 py-2.5 text-[11px] text-[#555]"
+//                 >
+//                   {industry}
+//                 </span>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       <section className="bg-white">
+//         <div className={`${wrap} py-20 md:py-28`}>
+//           <Eyebrow>Where I work</Eyebrow>
+//           <Heading className="mb-14 max-w-[520px]">
+//             {service.title} Services Across Multiple Regions
+//           </Heading>
+
+//           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+//             {regions.map((region) => (
+//               <div key={region.name}>
+//                 <h3 className="mb-3 text-[13px] font-medium text-[#008c6a]">
+//                   {region.name}
+//                 </h3>
+//                 <p className="text-[12px] leading-[1.75] text-[#666]">{region.text}</p>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       <section className="">
+//         <div className={`${wrap} py-20 md:py-28`}>
+//           <Eyebrow>Common questions</Eyebrow>
+//           <Heading className="mb-12 max-w-[560px]">
+//             Frequently asked questions about {service.title}
+//           </Heading>
+
+//           <div className="max-w-[820px] divide-y divide-[#dcdcd5] border-y border-[#dcdcd5]">
+//             {faqs.map((faq) => (
+//               <details key={faq.question} className="group py-5">
+//                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-[13px] font-medium text-[#111]">
+//                   {faq.question}
+//                   <span className="text-[18px] text-[#008c6a] transition group-open:rotate-45">
+//                     +
+//                   </span>
+//                 </summary>
+//                 <p className="mt-3 max-w-[700px] text-[12.5px] leading-[1.75] text-[#666]">
+//                   {faq.answer}
+//                 </p>
+//               </details>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       <section className="bg-white">
+//         <div className={`${wrap} py-20 md:py-28`}>
+//           <Eyebrow>Get started</Eyebrow>
+//           <h2 className="max-w-[640px] text-[clamp(36px,5vw,62px)] font-medium leading-[1] tracking-[-0.045em]">
+//             Ready For {service.title} That Actually Works For You?
+//           </h2>
+
+//           <p className="mt-6 max-w-[460px] text-[14px] leading-[1.7] text-[#666]">
+//             Book a meeting and I will walk you through exactly what a working{" "}
+//             {service.title.toLowerCase()} plan would look like for your business, with no
+//             pressure and no generic pitch.
+//           </p>
+
+//           <div className="mt-8 flex flex-wrap items-center gap-4">
+//             <Link
+//               href={siteInfo.contactPath}
+//               className="bg-[#008c6a] rounded-lg px-6 py-3.5 text-[11px] text-white transition hover:bg-[#00a77e]"
+//             >
+//               Create a meeting →
+//             </Link>
+//             <a
+//               href={siteInfo.whatsapp}
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               className="border rounded-lg border-[#dcdcd5] bg-white/60 px-6 py-3.5 text-[11px] text-[#333] transition hover:bg-white"
+//             >
+//               Message on WhatsApp →
+//             </a>
+//           </div>
+//         </div>
+//       </section>
+
+//       <section className="">
+//         <div className={`${wrap} py-20 md:py-28`}>
+//           <Heading className="mb-12 max-w-[420px]">
+//             Other ways I can help your business grow
+//           </Heading>
+
+// <div className="grid border border-[#dcdcd5] rounded-lg md:grid-cols-3">
+//   {others.map((item, index) => (
+//     <Link
+//       key={item.slug}
+//       href={`/services/${item.slug}`}
+//       className={`group p-7 transition hover:bg-white ${
+//         index === 1 ? "border-x border-[#dcdcd5]" : ""
+//       }`}
+//     >
+//       <h3 className="flex items-center justify-between text-[14px] font-medium text-[#111]">
+//         {item.title}
+//         <span className="text-[#008c6a] transition group-hover:translate-x-1">
+//           →
+//         </span>
+//       </h3>
+
+//       <p className="mt-3 text-[12px] leading-[1.7] text-[#777]">
+//         {item.shortDescription}
+//       </p>
+//     </Link>
+//   ))}
+// </div>
+//         </div>
+//       </section>
+//     </main>
+//   );
+// }
 
 
 
