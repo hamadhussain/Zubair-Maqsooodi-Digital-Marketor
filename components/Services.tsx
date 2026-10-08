@@ -52,7 +52,7 @@ export default function Services() {
         {services.map((service, index) => (
           <Link
             key={service.slug}
-            href={`/services/${service.slug}`}
+            href={`/service/${service.slug}`}
             className="block"
           >
             <article
