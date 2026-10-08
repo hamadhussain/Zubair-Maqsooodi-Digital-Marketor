@@ -331,7 +331,7 @@ export default async function ServicePage({ params }) {
         </section>
       </main>
 
-      <footer className="footer bg-white">
+      {/* <footer className="footer bg-white">
         <div className="footer-top">
           <div className="footer-brand">
             <div className="footer-logo">HH</div>
@@ -385,7 +385,7 @@ export default async function ServicePage({ params }) {
             Working with businesses across Pakistan, UAE, UK, USA and Canada
           </span>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 }

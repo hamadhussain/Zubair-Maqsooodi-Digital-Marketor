@@ -682,9 +682,9 @@ button {
 .footer-brand p {
   color: #777;
 
-  font-size: 12px;
+  /* font-size: 12px; */
 
-  line-height: 1.7;
+  /* line-height: 1.7; */
 
   margin-top: 20px;
 }
@@ -732,7 +732,7 @@ button {
 
   color: #555;
 
-  font-size: 9px;
+  /* font-size: 9px; */
 }
 
 /* =========================
