@@ -1,9 +1,9 @@
 export const siteInfo = {
-  name: "Hammad Hussain",
-  email: "hammad31012004@gmail.com",
-  whatsapp: "https://wa.me/923462351008",
+  name: "zubair",
+  email: "zubari@gmail.com",
+  whatsapp: "https://wa.me/3334343443",
   contactPath: "/",
-};
+}; 
 
 export const industries = [
   "Retail and ecommerce",
