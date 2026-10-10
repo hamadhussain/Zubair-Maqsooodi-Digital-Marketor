@@ -88,11 +88,7 @@ export default function WorkGallery({ sections }) {
             key={section.id}
             type="button"
             onClick={() => scrollToSection(section.id)}
-            className={`rounded-full border px-5 py-2.5 text-[14.5px] transition ${
-              activeId === section.id
-                ? "border-[#008c6a] bg-[#008c6a] text-white"
-                : "border-[#dcdcd5] bg-white text-[#333] hover:bg-[#f5f5f1]"
-            }`}
+            className={`rounded-full border px-5 py-2.5 text-[14.5px] transition border-[#dcdcd5] bg-white text-[#333] hover:bg-[#f5f5f1]`}
           >
             {section.title}
           </button>

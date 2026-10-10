@@ -12,7 +12,7 @@ export default function Home() {
       <Services />
       <Work />
       <CTA />
-      <Footer />
+      {/* <Footer /> */}
 
       <a
         href="https://wa.me/923001234567"

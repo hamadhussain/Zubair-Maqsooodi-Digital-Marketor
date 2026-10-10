@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { workPages } from "../utils/data/work";
 
-function getCover(page: (typeof workPages)[number]) {
-  const firstItem = page.sections[0].items[0];
-  return "poster" in firstItem ? firstItem.poster : firstItem.src;
-}
+// function getCover(index: number) {
+//   return `/work/${index + 1}.png`;
+// }
 
 export default function Work() {
   return (
@@ -50,7 +49,7 @@ export default function Work() {
               "
             >
               <img
-                src={'/portfolio-creative.webp'}
+                src={page.cover}
                 alt={page.title}
                 className="
                   block
