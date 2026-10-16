@@ -101,6 +101,84 @@ export default function Work() {
             </div>
           </Link>
         ))}
+        <Link
+            key="figma-designs"
+            href='https://zubairdesign.vercel.app/'
+            className="
+              project
+              bg-white
+              group
+              block
+              cursor-pointer
+              overflow-hidden
+              rounded-2xl
+              bg-white
+              transition-shadow
+              duration-500
+              ease-out
+              hover:shadow-2xl
+            "
+          >
+            <div
+              className="
+                project-image
+                overflow-hidden
+                rounded-t-2xl
+                bg-white
+              "
+            >
+              <img
+                src="/work/1.png"
+                alt="/work/1.png"
+                className="
+                  block
+                  h-full
+                  w-full
+                  scale-100
+                  transform-gpu
+                  object-cover
+                  transition-transform
+                  duration-700
+                  ease-out
+                  group-hover:-translate-y-[5px]
+                  group-hover:translate-x-[5px]
+                  group-hover:rotate-[-1deg]
+                  group-hover:scale-105
+                "
+              />
+
+            </div>
+
+            <div
+              className="
+                projectinfo
+                flex
+                items-center
+                justify-between
+                p-4
+                bg-white
+              "
+            >
+              {/* <div> */}
+                <h1 className=" font-bold">Figma Designs</h1>
+
+                {/* <h3>{page.title}</h3> */}
+              {/* </div> */}
+
+              <span
+                className="
+                  arrow
+                  transition-transform
+                  duration-500
+                  ease-out
+                  group-hover:-translate-y-1
+                  group-hover:translate-x-1
+                "
+              >
+                ↗
+              </span>
+            </div>
+          </Link>
       </div>
     </section>
   );
