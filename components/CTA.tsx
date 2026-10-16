@@ -37,18 +37,9 @@ export default function CTA() {
 
       </div>
 
-      <div className="relative overflow-hidden  person-wrapper">
-      <img
-        src="/zubair.png"
-        alt="Portrait"
-    className="w-full drop-shadow-[0_10px_25px_rgba(0,0,0,0.18)]"
-      />
+      
 
-      {/* White bottom fade */}
-      {/* <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white via-white/90 to-transparent" /> */}
-    </div>
-
-      {/* <div className="person-wrapper">
+      <div className="person-wrapper">
 
         <img
           src="/zubair.png"
@@ -57,7 +48,7 @@ export default function CTA() {
         />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
 
-      </div> */}
+      </div>
 
     </section>
   );
