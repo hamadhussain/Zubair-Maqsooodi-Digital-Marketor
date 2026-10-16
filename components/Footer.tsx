@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { services, siteInfo } from "../utils/data/services";
 
@@ -6,11 +7,16 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-top">
         <div className="footer-brand">
-          <div className="footer-logo">HH</div>
+          <div className="footer-logo">ZM</div>
+
+          <h3 className="mt-4 text-lg font-semibold">
+            Muhammad Zubair Maqsoodi
+          </h3>
 
           <p>
-            I design and build the digital presence of ambitious businesses,
-            all under one standard.
+            Digital Growth & Creative Technology Specialist helping
+            businesses grow through strategic marketing, creative
+            production, and AI-powered digital solutions.
           </p>
         </div>
 
@@ -18,13 +24,13 @@ export default function Footer() {
           <span>Explore</span>
 
           <Link href="/">Home</Link>
-          <Link href="/#work">Work</Link>
+          <Link href="/#work">My Work</Link>
           <Link href="/#services">Services</Link>
           <Link href={siteInfo.contactPath}>Contact</Link>
         </div>
 
         <div className="footer-column">
-          <span>Services</span>
+          <span>Expertise</span>
 
           {services.slice(0, 5).map((service) => (
             <Link
@@ -37,7 +43,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-column">
-          <span>Get in touch</span>
+          <span>Let's Connect</span>
 
           <a
             href={siteInfo.whatsapp}
@@ -47,24 +53,98 @@ export default function Footer() {
             Message on WhatsApp
           </a>
 
-          <a href={`mailto:${siteInfo.email}`}>
-            {siteInfo.email}
+          <a href="mailto:creativemuhammadzubair@gmail.com">
+            Email Me
+          </a>
+
+          <a href={siteInfo.contactPath}>
+            Discuss a Project →
           </a>
         </div>
       </div>
 
       <div className="footer-bottom">
         <span>
-          © {new Date().getFullYear()} {siteInfo.name}. All rights reserved.
+          © {new Date().getFullYear()} Muhammad Zubair Maqsoodi.
+          All rights reserved.
         </span>
 
         <span>
-          Working with businesses across Pakistan, UAE, UK, USA and Canada
+          Digital Marketing · Creative Solutions · AI Development
         </span>
       </div>
     </footer>
   );
 }
+
+
+// import Link from "next/link";
+// import { services, siteInfo } from "../utils/data/services";
+
+// export default function Footer() {
+//   return (
+//     <footer className="footer">
+//       <div className="footer-top">
+//         <div className="footer-brand">
+//           <div className="footer-logo">HH</div>
+
+//           <p>
+//             I design and build the digital presence of ambitious businesses,
+//             all under one standard.
+//           </p>
+//         </div>
+
+//         <div className="footer-column">
+//           <span>Explore</span>
+
+//           <Link href="/">Home</Link>
+//           <Link href="/#work">Work</Link>
+//           <Link href="/#services">Services</Link>
+//           <Link href={siteInfo.contactPath}>Contact</Link>
+//         </div>
+
+//         <div className="footer-column">
+//           <span>Services</span>
+
+//           {services.slice(0, 5).map((service) => (
+//             <Link
+//               key={service.slug}
+//               href={`/services/${service.slug}`}
+//             >
+//               {service.title}
+//             </Link>
+//           ))}
+//         </div>
+
+//         <div className="footer-column">
+//           <span>Get in touch</span>
+
+//           <a
+//             href={siteInfo.whatsapp}
+//             target="_blank"
+//             rel="noopener noreferrer"
+//           >
+//             Message on WhatsApp
+//           </a>
+
+//           <a href={`mailto:${siteInfo.email}`}>
+//             {siteInfo.email}
+//           </a>
+//         </div>
+//       </div>
+
+//       <div className="footer-bottom">
+//         <span>
+//           © {new Date().getFullYear()} {siteInfo.name}. All rights reserved.
+//         </span>
+
+//         <span>
+//           Working with businesses across Pakistan, UAE, UK, USA and Canada
+//         </span>
+//       </div>
+//     </footer>
+//   );
+// }
 
 
 
