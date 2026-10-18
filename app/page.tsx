@@ -15,7 +15,7 @@ export default function Home() {
       {/* <Footer /> */}
 
       <a
-        href="https://wa.me/923001234567"
+        href="https://wa.me/+923453132361"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp"

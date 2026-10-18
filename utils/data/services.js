@@ -1,7 +1,7 @@
 export const siteInfo = {
   name: "zubair",
   email: "zubari@gmail.com",
-  whatsapp: "https://wa.me/3334343443",
+  whatsapp: "https://wa.me/3453132361",
   contactPath: "/",
 }; 
 

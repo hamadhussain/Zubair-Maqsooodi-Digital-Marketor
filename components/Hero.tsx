@@ -4,14 +4,25 @@ export default function Hero() {
     <section className="relative hero-section">
       {/* STICKY BACKGROUND */}
       <div className="sticky top-0 z-0 h-svh">
-        <div
+        {/* <div
           className="
             absolute inset-0
-            bg-[url('/images/hero.jpg')]
+            bg-[url('/background.mp4')]
             bg-cover
             bg-center
           "
-        />
+        /> */}
+<div className="absolute inset-0 overflow-hidden">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute inset-0 h-full w-full object-cover"
+  >
+    <source src="/background.mp4" type="video/mp4" />
+  </video>
+</div>
 
         <div className="absolute inset-0 bg-black/50" />
       </div>
