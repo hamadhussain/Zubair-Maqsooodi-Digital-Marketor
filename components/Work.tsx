@@ -179,6 +179,82 @@ export default function Work() {
               </span>
             </div>
           </Link>
+          <Link
+  key="videography-photography"
+  href="https://www.facebook.com/share/1Dy1u1zcG7/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    project
+    bg-white
+    group
+    block
+    cursor-pointer
+    overflow-hidden
+    rounded-2xl
+    transition-shadow
+    duration-500
+    ease-out
+    hover:shadow-2xl
+  "
+>
+  <div
+    className="
+      project-image
+      overflow-hidden
+      rounded-t-2xl
+      bg-white
+    "
+  >
+    <img
+      src="/work/6.png"
+      alt="Videography & Photography"
+      className="
+        block
+        h-full
+        w-full
+        scale-100
+        transform-gpu
+        object-cover
+        transition-transform
+        duration-700
+        ease-out
+        group-hover:-translate-y-[5px]
+        group-hover:translate-x-[5px]
+        group-hover:rotate-[-1deg]
+        group-hover:scale-105
+      "
+    />
+  </div>
+
+  <div
+    className="
+      projectinfo
+      flex
+      items-center
+      justify-between
+      bg-white
+      p-4
+    "
+  >
+    <h1 className="font-bold">
+      Videography & Photography
+    </h1>
+
+    <span
+      className="
+        arrow
+        transition-transform
+        duration-500
+        ease-out
+        group-hover:-translate-y-1
+        group-hover:translate-x-1
+      "
+    >
+      ↗
+    </span>
+  </div>
+</Link>
       </div>
     </section>
   );

@@ -741,6 +741,29 @@ button {
 
 .whatsapp {
   position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #25d366;
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp:hover {
+  transform: scale(1.1);
+}
+
+/* .whatsapp {
+  position: fixed;
 
   right: 25px;
   bottom: 25px;
@@ -769,7 +792,7 @@ button {
   content: "◉";
 
   font-size: 18px;
-}
+} */
 
 /* =========================
    RESPONSIVE

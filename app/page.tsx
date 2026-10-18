@@ -3,6 +3,7 @@ import Services from "@/components/Services";
 import Work from "@/components/Work";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
         rel="noopener noreferrer"
         className="whatsapp"
       >
-        WhatsApp
+        <FaWhatsapp />
       </a>
     </main>
   );

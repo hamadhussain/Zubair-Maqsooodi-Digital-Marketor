@@ -168,7 +168,17 @@ export default function WorkGallery({ sections }) {
           );
         })}
       </div>
-
+ <div className="flex justify-start py-10 ">
+        <a
+          href="https://drive.google.com/drive/u/0/mobile/folders/1xFxEdchIUWSHWKB1gw1YtcAqBb2qhg8_"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 rounded-lg text-[15px] font-medium text-black transition duration-300  hover:text-[#008c6a] hover:scale-105"
+        >
+          View More
+          <span className="text-lg">↗</span>
+        </a>
+      </div>
       {selected && (
         <div
           className="fixed inset-0 z-[200] flex items-center justify-center bg-black/85 p-5"

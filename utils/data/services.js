@@ -519,6 +519,147 @@ export const services = [
       { question: "What is the difference between UI and UX?", answer: "UX is how the product works and feels to use, while UI is how it looks. I design both so they support each other." },
       { question: "Can you also build the website?", answer: "I can provide the design, and I can work with your development team or developer to bring it to life." },
     ],
+  },{
+    slug: "voice-over-artist",
+    title: "Voice Over Artist",
+    label: "Voice Over",
+    image: "/services/voice-over.jpg",
+    shortDescription: "Professional voice overs for advertisements, videos, explainers, audiobooks and brand content.",
+    heroTitle: "Professional Voice Over That Brings Your Brand's Message to Life",
+    heroText: "The right voice builds trust, captures attention and makes your message memorable across every platform.",
+    introLead: "I provide voice over services for businesses, creators and brands looking for clear, engaging and professional narration for their digital content, marketing campaigns and promotional projects.",
+    introHeading: "How Professional Voice Over Strengthens Your Content",
+    introParagraphs: [
+      "A strong voice over helps audiences connect with your message. Whether you are promoting a product, explaining a service or telling a story, clear delivery makes your content easier to understand and remember.",
+      "I focus on tone, pacing, pronunciation and delivery to match the purpose of your project and the personality of your brand.",
+      "From short advertisements to longer narrations, each recording is prepared to suit your content, audience and publishing platform."
+    ],
+    includedHeading: "What Is Included: My Voice Over Services",
+    included: [
+      { title: "Commercial voice overs", text: "Engaging voice recordings for advertisements, promotional campaigns and brand videos." },
+      { title: "Explainer video narration", text: "Clear, natural narration that makes products, services and complex ideas easier to understand." },
+      { title: "Social media voice overs", text: "Short-form voice recordings for reels, social media videos and digital advertisements." },
+      { title: "Corporate narration", text: "Professional narration for presentations, company profiles, training materials and business videos." },
+      { title: "Audio editing and delivery", text: "Cleaned and organized audio files delivered in formats suited to your project requirements." }
+    ],
+    processHeading: "The 5 Steps In My Voice Over Process",
+    process: [
+      { title: "Understand your project", text: "Discuss the script, audience, tone and purpose of your recording." },
+      { title: "Review the script", text: "Check pronunciation, pacing and emphasis before recording." },
+      { title: "Record the voice over", text: "Record the script with a delivery style suited to your content." },
+      { title: "Edit and refine", text: "Review the recording and make agreed adjustments to the delivery." },
+      { title: "Deliver the final audio", text: "Provide the finished audio in the agreed format, ready for use." }
+    ],
+    benefitsHeading: "Benefits Of Professional Voice Over",
+    benefits: [
+      "A clear and engaging message for your audience",
+      "A consistent voice that fits your brand identity",
+      "Professional narration for marketing and business content",
+      "Audio suited to different digital platforms",
+      "Better storytelling through thoughtful pacing and delivery",
+      "Ready-to-use audio files for your project"
+    ],
+    faqs: [
+      { question: "What types of voice over projects do you accept?", answer: "Projects may include advertisements, promotional videos, explainers, social media content, corporate narration and other business recordings." },
+      { question: "Can you match a specific tone or style?", answer: "Yes. The delivery can be tailored to your brief, whether you need a friendly, energetic, conversational or professional tone." }
+    ]
+  },
+  {
+    slug: "social-media-management",
+    title: "Social Media Management & Campaigns",
+    label: "Social Media Management",
+    image: "/services/social-media-management.jpg",
+    shortDescription: "Social media marketing, account management and digital campaigns for businesses in the UK, US, UAE and beyond.",
+    heroTitle: "Social Media Management That Builds Brands and Drives Campaigns",
+    heroText: "Consistent content, thoughtful account management and focused campaigns help businesses reach the right audience and turn attention into action.",
+    introLead: "I help businesses manage their social media presence, plan marketing content and coordinate digital campaigns. From handling brand accounts for clients in the UK, US and UAE to promoting eBooks, websites and RSP projects, my approach focuses on consistent communication and clear campaign goals.",
+    introHeading: "How Strategic Social Media Management Supports Business Growth",
+    introParagraphs: [
+      "Social media requires more than posting occasionally. A consistent strategy combines relevant content, audience engagement, brand communication and performance reviews to build a recognizable online presence.",
+      "I support businesses with day-to-day social media handling, content planning and campaign coordination, adapting the approach to the audience, platform and objectives of each client.",
+      "Whether the goal is to grow brand awareness, promote an eBook, drive website traffic or support an RSP campaign, the work is planned around the intended audience and measurable objectives."
+    ],
+    includedHeading: "What Is Included: My Social Media Management Services",
+    included: [
+      { title: "Social media account management", text: "Organized account handling, profile updates, content coordination and day-to-day brand communication." },
+      { title: "Social media marketing strategy", text: "Content planning and marketing direction aligned with your business goals and target audience." },
+      { title: "Content planning and publishing", text: "Content calendars and publishing coordination to maintain a consistent presence across relevant platforms." },
+      { title: "eBook promotion campaigns", text: "Campaign planning and promotional content designed to introduce your eBook to relevant audiences and encourage downloads or sales." },
+      { title: "Website promotion campaigns", text: "Social media content and campaign coordination designed to increase awareness and direct relevant visitors to your website." },
+      { title: "RSP campaign support", text: "Campaign messaging, content coordination and promotional support for RSP projects, based on the client's goals and requirements." },
+      { title: "International client support", text: "Remote social media management and campaign coordination for clients in the UK, US, UAE and other markets." },
+      { title: "Performance monitoring", text: "Review available platform insights to understand reach, engagement and campaign performance and guide future improvements." }
+    ],
+    processHeading: "The 5 Steps In My Social Media Management Process",
+    process: [
+      { title: "Understand your business", text: "Identify your audience, brand voice, platforms and business objectives." },
+      { title: "Build the strategy", text: "Plan content themes, publishing schedules and campaign priorities." },
+      { title: "Manage content and accounts", text: "Coordinate publishing, account updates and audience communication according to the agreed scope." },
+      { title: "Launch campaigns", text: "Coordinate promotional campaigns for your services, eBook, website or RSP project." },
+      { title: "Review and improve", text: "Use available performance insights to refine content and future campaign planning." }
+    ],
+    benefitsHeading: "Benefits Of Professional Social Media Management",
+    benefits: [
+      "A consistent and professional brand presence",
+      "Organized content planning and publishing",
+      "More focused communication with your target audience",
+      "Campaign support for eBooks, websites and RSP projects",
+      "Remote management for international businesses",
+      "Performance insights to support ongoing improvements"
+    ],
+    faqs: [
+      { question: "Which countries do you work with?", answer: "I support clients remotely, including businesses and brands in the UK, US and UAE, subject to project requirements and agreed working hours." },
+      { question: "Do you manage social media accounts as well as marketing campaigns?", answer: "Yes. Services can include account handling, content planning, publishing coordination and campaign support, depending on the agreed scope." },
+      { question: "Can you run campaigns for an eBook or website?", answer: "Yes. I can help plan and coordinate social media promotional campaigns intended to build awareness, attract relevant visitors and support your campaign objectives." },
+      { question: "What does RSP mean in your campaign service?", answer: "RSP can have different meanings depending on the project. The campaign scope and deliverables can be defined according to your specific RSP initiative." }
+    ]
+  },
+  {
+    slug: "videography-photography",
+    title: "Videography & Photography",
+    label: "Videography & Photography",
+    image: "/services/videography-photography.jpg",
+    shortDescription: "Professional photo and video content for brands, products, events, businesses and digital marketing.",
+    heroTitle: "Videography & Photography That Tells Your Brand's Story",
+    heroText: "Strong visuals capture attention, communicate value and help your audience connect with your brand.",
+    introLead: "I provide videography and photography services for businesses, creators and brands that need compelling visual content for websites, social media, promotional campaigns, products and events.",
+    introHeading: "How Professional Photography and Videography Elevate Your Brand",
+    introParagraphs: [
+      "High-quality visuals help customers understand your products, recognize your brand and develop confidence in your business. The right imagery also makes your marketing content more engaging and consistent.",
+      "I approach every project with attention to composition, lighting, framing and storytelling so the visuals support the intended message and audience.",
+      "From product photography and brand videos to event coverage and social media content, deliverables are planned around where and how the final content will be used."
+    ],
+    includedHeading: "What Is Included: My Videography & Photography Services",
+    included: [
+      { title: "Product photography", text: "Clear, carefully composed product images for websites, online stores, catalogs and promotional materials." },
+      { title: "Brand and business photography", text: "Professional images that showcase your business, workspace, team, services and brand identity." },
+      { title: "Promotional videography", text: "Video footage for business promotions, product showcases, advertisements and brand storytelling." },
+      { title: "Social media content creation", text: "Photo and video content planned for social platforms, including reels, short videos and feed posts." },
+      { title: "Event photography and videography", text: "Visual coverage of suitable business events, launches, gatherings and special occasions." },
+      { title: "Editing and post-production", text: "Photo retouching, color correction, video editing and export preparation according to the project scope." }
+    ],
+    processHeading: "The 5 Steps In My Videography & Photography Process",
+    process: [
+      { title: "Discuss your requirements", text: "Understand the project, intended audience, visual style and final use of the content." },
+      { title: "Plan the shoot", text: "Agree on locations, shot lists, schedules and required deliverables." },
+      { title: "Capture the visuals", text: "Photograph or record footage according to the approved creative direction." },
+      { title: "Edit and refine", text: "Select the strongest material and apply the agreed editing and finishing." },
+      { title: "Deliver the final files", text: "Provide edited photos and videos in the agreed formats and sizes." }
+    ],
+    benefitsHeading: "Benefits Of Professional Videography & Photography",
+    benefits: [
+      "Stronger and more consistent brand visuals",
+      "High-quality imagery for websites and marketing",
+      "Engaging video content for social media",
+      "Product visuals that communicate important details",
+      "Professional coverage for brand activities and events",
+      "Edited assets ready for digital publishing and promotion"
+    ],
+    faqs: [
+      { question: "What types of photography do you provide?", answer: "Depending on the project, services can include product, brand, business, promotional and event photography." },
+      { question: "Do you provide video editing with videography?", answer: "Yes. Editing and post-production can be included according to the project requirements and agreed deliverables." },
+      { question: "Can the content be used on social media and websites?", answer: "Yes. Final deliverables can be prepared for websites, social media platforms, digital advertisements and other agreed uses." }
+    ]
   },
 ];
 

@@ -413,6 +413,25 @@ export const workPages = [
       // ),
     ],
   },
+  {
+    slug: "ai-video-creation",
+    cover: "/work/4.png",
+    title: "AI Video Creation",
+    label: "AI Video Creation",
+    heroTitle: "Ideas transformed into cinematic AI videos.",
+    heroText:
+      "Explore AI-generated videos, creative visual storytelling and next-generation video content designed for brands, products and digital campaigns.",
+    sections: [
+      videoSection(
+        "ai-video-creation/videos",
+        "ai-generated-videos",
+        "AI-Generated Videos",
+        "Creative AI-generated videos combining cinematic visuals, imaginative scenes and engaging storytelling for brands, products and digital campaigns.",
+        10,
+        { columns: 3, aspect: "9/16", itemName: "AI Video" }
+      ),
+    ],
+  },
 ];
 
 export function getWorkBySlug(slug) {
