@@ -20,7 +20,7 @@ export default function Hero() {
     playsInline
     className="absolute inset-0 h-full w-full object-cover"
   >
-    <source src="/background.mp4" type="video/mp4" />
+    <source src="/background2.mp4" type="video/mp4" />
   </video>
 </div>
 
