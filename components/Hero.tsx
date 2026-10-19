@@ -13,7 +13,7 @@ export default function Hero() {
           "
         /> */}
 <div className="absolute inset-0 overflow-hidden">
-  <video
+  {/* <video
     autoPlay
     loop
     muted
@@ -21,7 +21,19 @@ export default function Hero() {
     className="absolute inset-0 h-full w-full object-cover"
   >
     <source src="/background3.mp4" type="video/mp4" />
-  </video>
+  </video> */}
+  <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  controls
+  className="absolute inset-0 h-full w-full object-cover"
+  onError={(e) => console.log("VIDEO ERROR:", e.currentTarget.error)}
+  onLoadedData={() => console.log("VIDEO LOADED")}
+>
+  <source src="/background3.mp4" type="video/mp4" />
+</video>
 </div>
 
         <div className="absolute inset-0 bg-black/50" />

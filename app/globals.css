@@ -66,8 +66,9 @@ button {
 .hero-section {
   /* position: relative; */
   /* z-index: 0; */
-  background: url("/background.mp4") center/cover no-repeat fixed;
-
+  /* background: url("/background.mp4") center/cover no-repeat fixed; */
+  position: relative;
+  background: #000;
   /* height: 100vh; */
   /* width: 100%; */
 
